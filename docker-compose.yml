@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app1:
+    build: ./app1
+    ports:
+      - "5001:5000"
+    networks:
+      - app-network
+    volumes:
+      - ./app1:/app
+
+networks:
+  app-network:
+    driver: bridge
